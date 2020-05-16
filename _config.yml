@@ -15,8 +15,7 @@ navbar-links:
   About Me: "aboutme"
   Resources:
     - My Github: "https://github.com/zappyfish"
-    - Learn markdown: "https://www.markdowntutorial.com/"
-  Author's home: "github.zappyfish.io"
+  Projects: "projects"
 
 # --- Logo --- #
 
