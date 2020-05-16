@@ -1,6 +1,6 @@
 title: Project Title
 sub_title: One Sentence Description
 description: Paragraph or so Description
-banner_image: assets/img/hello_world.jpeg
-focus_image: assets/img/heart.png
+banner_image: /assets/img/hello_world.jpeg
+focus_image: /assets/img/heart.png
 page_link: Link to Website Page
