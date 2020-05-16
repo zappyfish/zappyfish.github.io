@@ -1,4 +1,5 @@
 from yattag import Doc
+import os
 import yaml
 
 HEADER_STRING = """---
@@ -9,18 +10,16 @@ subtitle: Things I have made and helped make
 
 """
 
-def add_yaml_to_project(doc, tag, text, yaml_file):
+def add_project(doc, tag, text, yaml_file):
   with open(yaml_file, "r") as f:
     project_info = yaml.safe_load(f)
-  doc.stag('img', src=project_info['banner_image'], klass="project_image")
-  with tag('div', klass="examine_project"):
-    doc.stag('img', src=project_info['focus_image'])
-    text(project_info['description'])
-
-def add_project(doc, tag, text):
-  with tag('div', klass="tab-content"):
-    with tag('div', id="project"):
-      add_yaml_to_project(doc, tag, text, "_projects/_project.yaml")
+  with tag('div', id="project", href=project_info['page_link']):
+    project_banner = os.path.join('/assets/img/banner_images/', project_info['banner_image'])
+    project_examine = os.path.join('/assets/img/focus_images/', project_info['focus_image'])
+    doc.stag('img', src=project_banner, klass="project_image")
+    with tag('div', klass="examine_project"):
+      doc.stag('img', src=project_examine)
+      text(project_info['description'])
 
 
 def save_file(html_string):
@@ -34,7 +33,9 @@ def main():
     with tag('head'):
       doc.stag('link', rel="stylesheet", href="_projects/project_styles.css")
     with tag('body'):
-      add_project(doc, tag, text)
+      for project in os.listdir('_projects/configs/'):
+        config_path = os.path.join('_projects/configs/', project)
+        add_project(doc, tag, text, config_path)
   save_file(doc.getvalue())
   
 
