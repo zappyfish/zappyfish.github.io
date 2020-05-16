@@ -2,9 +2,9 @@ from yattag import Doc
 
 
 HEADER_STRING = """---
-layout: home
-title: index page
-subtitle: links and stuff go here
+layout: page
+title: :hammer: Projects :hammer:
+subtitle: Things I have made and helped make
 ---
 
 """
