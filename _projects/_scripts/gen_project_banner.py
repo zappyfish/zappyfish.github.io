@@ -1,14 +1,24 @@
 from yattag import Doc
 
-def add_project(tag, text):
+
+HEADER_STRING = """---
+layout: home
+title: index page
+subtitle: links and stuff go here
+---
+
+"""
+
+
+def add_project(doc, tag, text):
   with tag('div', klass="tab-content"):
     with tag('div', id="background"):
-      text('hello')
+      text('testing')
 
 
 def save_file(html_string):
   with open("projects.html", "w") as f:
-    f.write(html_string)
+    f.write(HEADER_STRING + html_string)
 
 def main():
   doc, tag, text = Doc().tagtext()
@@ -16,7 +26,7 @@ def main():
     with tag('head'):
       doc.stag('link', rel="stylesheet", href="_projects/project_styles.css")
     with tag('body'):
-      add_project(tag, text)
+      add_project(doc, tag, text)
   save_file(doc.getvalue())
   
 
