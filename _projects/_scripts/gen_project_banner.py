@@ -15,7 +15,7 @@ def add_yaml_to_project(doc, tag, text, yaml_file):
   doc.stag('img', src=project_info['banner_image'], klass="project_image")
   with tag('div', klass="examine_project"):
     doc.stag('img', src=project_info['focus_image'])
-    txt(project_info['description'])
+    text(project_info['description'])
 
 def add_project(doc, tag, text):
   with tag('div', klass="tab-content"):
