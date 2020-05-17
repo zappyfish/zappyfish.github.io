@@ -5,6 +5,8 @@
 #project {
   height: 200px;
   width: 100%;
+  display: table-cell;
+  vertical-align: middle;
 }
 
 @media (min-width: 480px) {
@@ -25,10 +27,7 @@
 }
 
 .examine_project {
-  float: left;
-  clear: none;
   position:absolute; top:0; left:0;
-  /* HIDE SECOND TITLE */
   opacity: 0;
 }
 
