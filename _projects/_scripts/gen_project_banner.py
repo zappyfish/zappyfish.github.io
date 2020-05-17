@@ -22,7 +22,7 @@ def add_project(doc, tag, text, yaml_file):
       with tag('div', klass="examine_project"):
         doc.stag('img', src=project_examine)
         text(project_info['description'])
-      text("test test test test test test teeeeeest")
+      text("meow im a cat")
   
 
 def save_file(html_string):
