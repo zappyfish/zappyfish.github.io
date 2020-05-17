@@ -5,7 +5,7 @@ import yaml
 HEADER_STRING = """---
 layout: page
 title:  Projects
-subtitle: Things I have made and helped make
+subtitle: Some things I have made and helped make
 ---
 
 """
