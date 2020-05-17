@@ -1,8 +1,5 @@
 #project {
-  background-position: center;
-  background-size: cover;
   height: 225px; width: 100%;
-  color:red;
 }
 
 @media (min-width: 480px) {
