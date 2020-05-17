@@ -41,10 +41,11 @@ def main():
     with tag('body'):
       with open('_projects/configs.txt', 'r') as f:
         configs = f.readlines()
-      with tag('table', id="projects"):
-        for project in configs:
-          config_path = os.path.join('_projects/configs/', project.strip())
-          add_project(doc, tag, text, config_path)
+      with tag('div', id="projectts"):
+        with tag('table'):
+          for project in configs:
+            config_path = os.path.join('_projects/configs/', project.strip())
+            add_project(doc, tag, text, config_path)
   save_file(doc.getvalue())
   
 
