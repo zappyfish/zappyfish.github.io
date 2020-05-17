@@ -13,8 +13,8 @@ subtitle: Things I have made and helped make
 def add_project(doc, tag, text, yaml_file):
   with open(yaml_file, "r") as f:
     project_info = yaml.safe_load(f)
-  with tag('a', href=project_info['page_link']):
-    with tag('div', id="project"):
+  with tag('div', id="project"):
+    with tag('a', href=project_info['page_link']):
       project_banner = os.path.join('/assets/img/banner_images/', project_info['banner_image'])
       project_examine = os.path.join('/assets/img/focus_images/', project_info['focus_image'])
       description = project_info['description']
@@ -35,9 +35,10 @@ def main():
     with tag('head'):
       doc.stag('link', rel="stylesheet", type="text/css", href="/assets/css/project_styles.css")
     with tag('body'):
-      for project in os.listdir('_projects/configs/'):
-        config_path = os.path.join('_projects/configs/', project)
-        add_project(doc, tag, text, config_path)
+      with tag('div', id="projects"):
+        for project in os.listdir('_projects/configs/'):
+          config_path = os.path.join('_projects/configs/', project)
+          add_project(doc, tag, text, config_path)
   save_file(doc.getvalue())
   
 
