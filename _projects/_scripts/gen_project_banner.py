@@ -33,7 +33,7 @@ def main():
   doc, tag, text = Doc().tagtext()
   with tag('html'):
     with tag('head'):
-      doc.stag('link', rel="stylesheet", href="_projects/project_styles.css")
+      doc.stag('link', rel="stylesheet", href="/_projects/project_styles.css")
     with tag('body'):
       for project in os.listdir('_projects/configs/'):
         config_path = os.path.join('_projects/configs/', project)
