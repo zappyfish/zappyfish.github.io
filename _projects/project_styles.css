@@ -2,6 +2,7 @@
   background-position: center;
   background-size: cover;
   height: 225px; width: 100%;
+  color:green;
 }
 
 @media (min-width: 480px) {
