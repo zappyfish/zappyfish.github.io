@@ -13,6 +13,8 @@ subtitle: Things I have made and helped make
 def add_project(doc, tag, text, yaml_file):
   with open(yaml_file, "r") as f:
     project_info = yaml.safe_load(f)
+  with tag('tr'):
+    text(project_info['title'])
   with tag('tr', id="project"):
     with tag('a', href=project_info['page_link']):
       project_banner = os.path.join('/assets/img/banner_images/', project_info['banner_image'])
