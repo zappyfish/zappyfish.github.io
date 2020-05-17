@@ -12,6 +12,7 @@
   width: 100%;
   display: table-cell;
   vertical-align: middle;
+  padding-bottom:30px;
 }
 
 @media (min-width: 480px) {
