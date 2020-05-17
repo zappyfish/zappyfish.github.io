@@ -24,12 +24,13 @@
 .examine_project {
   float: left;
   clear: none;
+  position:absolute; top:0; left:0;
   /* HIDE SECOND TITLE */
   opacity: 0;
 }
 
 #project:hover .project_image {
-  opacitty: 0;
+  opacity: 0;
 }
 
 #project:hover .examine_project {

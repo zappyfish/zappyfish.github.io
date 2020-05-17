@@ -13,13 +13,15 @@ subtitle: Things I have made and helped make
 def add_project(doc, tag, text, yaml_file):
   with open(yaml_file, "r") as f:
     project_info = yaml.safe_load(f)
-  with tag('div', id="project", href=project_info['page_link']):
-    project_banner = os.path.join('/assets/img/banner_images/', project_info['banner_image'])
-    project_examine = os.path.join('/assets/img/focus_images/', project_info['focus_image'])
-    doc.stag('img', src=project_banner, klass="project_image")
-    with tag('div', klass="examine_project"):
-      doc.stag('img', src=project_examine)
-      text(project_info['description'])
+  with tag('a', href=project_info['page_link']):
+    with tag('div', id="project"):
+      project_banner = os.path.join('/assets/img/banner_images/', project_info['banner_image'])
+      project_examine = os.path.join('/assets/img/focus_images/', project_info['focus_image'])
+      description = project_info['description']
+      doc.stag('img', src=project_banner, klass="project_image")
+      with tag('div', klass="examine_project"):
+        doc.stag('img', src=project_examine)
+        text(project_info['description'])
 
 
 def save_file(html_string):
