@@ -14,7 +14,7 @@ author: Liam Kelly
 navbar-links:
   About Me: "aboutme"
   Projects: "projects"
-
+  Resume: "resume"
 # --- Logo --- #
 
 # Image to show in the navigation bar - works best with a square image
